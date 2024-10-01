@@ -104,7 +104,7 @@ th {
     background-color: rgba(2, 119, 189, 0.7); /* Dark blue semi-transparent caption background */
     padding: 5px;
     border-radius: 5px;
-    font-size: 5em;
+    font-size: 1em;
 }
 
 .carousel-item {
