@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar Container -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1>Hello, I'm Allie!</h1>
+        <p>Welcome to my personal website! Here, you can learn more about my schedule and hobbies. A few fun facts about me are that I am a goalkeeper on the Villanova Women's Soccer team, I love the beach, and I am studying Computer Science. Check out the Villanova Computing Sciences department <a href="https://www1.villanova.edu/university/liberal-arts-sciences/programs/computing-sciences.html" target="_blank">here</a>.</p>
+
+        <!-- Photo of yourself -->
+        <img src="images/me_media.jpg" alt="Photo of Allie" class="profile-photo">
+
+        <h2><!-- Place this in your index.html or script.js file -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const form = document.getElementById('name-form');
+                const greeting = document.getElementById('greeting');
+
+                form.addEventListener('submit', (event) => {
+                    event.preventDefault(); // Prevent page reload
+                    const nameInput = document.getElementById('name-input').value;
+                    greeting.textContent = `Welcome ${nameInput} to my website!`;
+                });
+            });
+        </script>
+</h2>
+        <form id="name-form">
+            <input type="text" id="name-input" placeholder="Enter your name" required>
+            <button type="submit">Submit</button>
+        </form>
+        <h3 id="greeting"></h3>
+
+    </main>
+
+
+    <script src="resources/js/navbar.js"></script>
+    <script>
+        loadNavbar(); // Call the function to load the navbar
+    </script>
+</body>
+</html>
