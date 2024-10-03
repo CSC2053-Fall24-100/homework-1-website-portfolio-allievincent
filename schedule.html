@@ -9,65 +9,88 @@
 <body>
     <!-- Navigation Bar -->
     <header>
-        <nav class="navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="schedule.html">Schedule</a></li>
-                <li><a href="hobbies.html">Hobbies</a></li>
-            </ul>
-        </nav>
+        <div id="navbar-container"></div>
     </header>
 
     <!-- Schedule Table -->
     <main class="container">
         <h2>Fall 2024 Class Schedule</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Course Name</th>
-                    <th>Day</th>
-                    <th>Time</th>
-                    <th>Room</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>THL 1000 - Faith, Reason & Culture</td>
-                    <td>Monday, Wednesday, Friday</td>
-                    <td>8:30 AM - 9:20 AM</td>
-                    <td>Bartley 033</td>
-                </tr>
-                <tr>
-                    <td>CSC 1700 - Analysis of Algorithms</td>
-                    <td>Monday, Wednesday, Friday</td>
-                    <td>9:35 AM - 10:25 AM</td>
-                    <td>Mendel G86</td>
-                </tr>
-                <tr>
-                    <td>CRM 1001 - Intro to Criminology</td>
-                    <td>Monday, Wednesday, Friday</td>
-                    <td>10:40 AM - 11:30 AM</td>
-                    <td>Vasey 201A</td>
-                </tr>
-                <tr>
-                    <td>CSC 2400 - Computer Systems I</td>
-                    <td>Monday</td>
-                    <td>6:15 PM - 8:05 PM</td>
-                    <td>Mendel G87</td>
-                </tr>
-                <td>CSC 2053 - Platform Based Computing</td>
-                    <td>Tuesday</td>
-                    <td>6:15 PM - 8:55 PM</td>
-                    <td>Mendel G87</td>
-                </tr>
-                <tr>
-                    <td>VU Athletics WSOC Practice</td>
-                    <td>Tuesday, Wednesday, Thursday, Friday, Saturday</td>
-                    <td>1PM - 6PM</td>
-                    <td>Higgins Soccer Complex</td>
-                </tr>
-            </tbody>
-        </table>
+        <button id="toggle-schedule">Hide Schedule</button>
+        <div id="schedule-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Room</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>THL 1000 - Faith, Reason & Culture</td>
+                        <td>Monday, Wednesday, Friday</td>
+                        <td>8:30 AM - 9:20 AM</td>
+                        <td>Bartley 033</td>
+                    </tr>
+                    <tr>
+                        <td>CSC 1700 - Analysis of Algorithms</td>
+                        <td>Monday, Wednesday, Friday</td>
+                        <td>9:35 AM - 10:25 AM</td>
+                        <td>Mendel G86</td>
+                    </tr>
+                    <tr>
+                        <td>CRM 1001 - Intro to Criminology</td>
+                        <td>Monday, Wednesday, Friday</td>
+                        <td>10:40 AM - 11:30 AM</td>
+                        <td>Vasey 201A</td>
+                    </tr>
+                    <tr>
+                        <td>CSC 2400 - Computer Systems I</td>
+                        <td>Monday</td>
+                        <td>6:15 PM - 8:05 PM</td>
+                        <td>Mendel G87</td>
+                    </tr>
+                    <tr>
+                        <td>CSC 2053 - Platform Based Computing</td>
+                        <td>Tuesday</td>
+                        <td>6:15 PM - 8:55 PM</td>
+                        <td>Mendel G87</td>
+                    </tr>
+                    <tr>
+                        <td>VU Athletics WSOC Practice</td>
+                        <td>Tuesday, Wednesday, Thursday, Friday, Saturday</td>
+                        <td>1 PM - 6 PM</td>
+                        <td>Higgins Soccer Complex</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.getElementById('toggle-schedule');
+            const scheduleContainer = document.getElementById('schedule-container');
+
+            toggleButton.addEventListener('click', () => {
+                if (scheduleContainer.style.display === 'none') {
+                    scheduleContainer.style.display = 'block';
+                    toggleButton.textContent = 'Hide Schedule';
+                } else {
+                    scheduleContainer.style.display = 'none';
+                    toggleButton.textContent = 'Show Schedule';
+                }
+            });
+        });
+    </script>
+
+
+    <!-- Include JavaScript Files -->
+    <script src="resources/js/navbar.js"></script>
+    <script src="resources/js/script.js"></script>
+    <script>
+        loadNavbar(); // Call the function to load the navbar
+    </script>
 </body>
 </html>

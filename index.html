@@ -18,7 +18,20 @@
         <!-- Photo of yourself -->
         <img src="images/me_media.jpg" alt="Photo of Allie" class="profile-photo">
 
-        <h2>Welcome to My Portfolio!</h2>
+        <h2><!-- Place this in your index.html or script.js file -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const form = document.getElementById('name-form');
+                const greeting = document.getElementById('greeting');
+
+                form.addEventListener('submit', (event) => {
+                    event.preventDefault(); // Prevent page reload
+                    const nameInput = document.getElementById('name-input').value;
+                    greeting.textContent = `Welcome ${nameInput} to my website!`;
+                });
+            });
+        </script>
+</h2>
         <form id="name-form">
             <input type="text" id="name-input" placeholder="Enter your name" required>
             <button type="submit">Submit</button>
@@ -28,7 +41,7 @@
     </main>
 
 
-    <script src="/resources/js/navbar.js"></script>
+    <script src="resources/js/navbar.js"></script>
     <script>
         loadNavbar(); // Call the function to load the navbar
     </script>
